@@ -5,7 +5,7 @@ services:
     image: amazechain/postgres:14
     restart: always
     container_name: 'postgres'
-    command: postgres -c 'max_connections=1000'
+    command: postgres -c 'max_connections=1000' -c 'max_wal_size=16GB' -c 'min_wal_size=1GB'
     environment:
         POSTGRES_PASSWORD: 'postgres'
         POSTGRES_USER: 'postgres'

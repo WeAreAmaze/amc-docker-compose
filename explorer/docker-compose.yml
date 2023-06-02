@@ -17,7 +17,7 @@ services:
       - db
       - smart-contract-verifier
       - redis_db
-    image: amazechain/miner_amt_new:v4
+    image: amazechain/miner_amt_new:v5
     restart: always
     stop_grace_period: 5m
     container_name: 'blockscout'
@@ -32,8 +32,8 @@ services:
       - 4000:4000
     volumes:
       - ./logs/:/app/logs/
-      - ./allocs/genesis-online-geth.json:/app/genesis-geth.json
-
+      - ./allocs/genesis-geth.json:/app/genesis-geth.json
+      - ./envs/postgresql.conf:/etc/postgresql/postgresql.conf
   smart-contract-verifier:
     extends:
       file: ./services/docker-compose-smart-contract-verifier.yml
