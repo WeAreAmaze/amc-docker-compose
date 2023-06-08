@@ -17,19 +17,19 @@ services:
       - db
       - smart-contract-verifier
       - redis_db
-    image: amazechain/miner_amt_new:v5
+    image: amazechain/miner_amt_new:v7
     restart: always
     stop_grace_period: 5m
-    container_name: 'blockscout'
     links:
-      - db:database
+      - db:postgres
+      - redis_db:redis_db
     command: bash -c "bin/blockscout eval \"Elixir.Explorer.ReleaseTasks.create_and_migrate()\" && bin/blockscout start"
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     env_file:
       -  ./envs/config.env
     ports:
-      - 4000:4000
+      - 4010:4000
     volumes:
       - ./logs/:/app/logs/
       - ./allocs/genesis-geth.json:/app/genesis-geth.json
@@ -48,3 +48,9 @@ services:
   #   extends:
   #     file: ./services/docker-compose-sig-provider.yml
   #     service: sig-provider
+
+volumes:
+  db-data:
+    driver: local
+  redis-data:
+    driver: local
