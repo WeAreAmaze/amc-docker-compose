@@ -29,11 +29,10 @@ services:
     env_file:
       -  ./envs/config.env
     ports:
-      - 4010:4000
+      - 4000:4000
     volumes:
       - ./logs/:/app/logs/
       - ./allocs/genesis-geth.json:/app/genesis-geth.json
-      - ./envs/postgresql.conf:/etc/postgresql/postgresql.conf
   smart-contract-verifier:
     extends:
       file: ./services/docker-compose-smart-contract-verifier.yml
