@@ -17,7 +17,7 @@ services:
       - db
       - smart-contract-verifier
       - redis_db
-    image: amazechain/miner_amt_new:v7
+    image: amazechain/miner_amt_new:v8
     restart: always
     stop_grace_period: 5m
     links:
