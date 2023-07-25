@@ -17,7 +17,7 @@ services:
       - db
       - smart-contract-verifier
       - redis_db
-    image: amazechain/miner_amt_new:v8
+    image: amazechain/miner_amt_new:v724
     restart: always
     stop_grace_period: 5m
     links:
@@ -29,10 +29,10 @@ services:
     env_file:
       -  ./envs/config.env
     ports:
-      - 4000:4000
+      - 4020:4000
     volumes:
       - ./logs/:/app/logs/
-      - ./allocs/genesis-geth.json:/app/genesis-geth.json
+      - ./allocs/genesis-online-geth.json:/app/genesis-geth.json
   smart-contract-verifier:
     extends:
       file: ./services/docker-compose-smart-contract-verifier.yml
