@@ -13,4 +13,4 @@ services:
       - ../envs/common-blockscout.env
     volumes:
       - ./logs/:/app/logs/
-      - ./allocs/genesis-online-geth.json:/app/genesis-geth.json
+      - ./allocs/genesis-mainnet-geth.json:/app/genesis-geth.json
