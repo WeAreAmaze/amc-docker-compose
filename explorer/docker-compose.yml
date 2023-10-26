@@ -42,6 +42,11 @@ services:
     extends:
       file: ./services/docker-compose-frontend.yml
       service: frontend
+    environment:
+      NEXT_PUBLIC_API_HOST: ${NEXT_PUBLIC_API_HOST:-mainnet.amazechain.com}
+      NEXT_PUBLIC_API_PROTOCOL: ${NEXT_PUBLIC_API_PROTOCOL:-https}
+      NEXT_PUBLIC_APP_HOST: ${NEXT_PUBLIC_APP_HOST:-mainnet.amazechain.com}
+      NEXT_PUBLIC_APP_PROTOCOL: ${NEXT_PUBLIC_APP_PROTOCOL:-https}
 
   proxy:
     depends_on:
