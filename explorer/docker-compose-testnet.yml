@@ -46,9 +46,9 @@ services:
       file: ./services/docker-compose-frontend.yml
       service: frontend
     environment:
-      NEXT_PUBLIC_API_HOST: ${NEXT_PUBLIC_API_HOST:-mainnet.amazechain.com}
+      NEXT_PUBLIC_API_HOST: ${NEXT_PUBLIC_API_HOST:-testnet.amazechain.com}
       NEXT_PUBLIC_API_PROTOCOL: ${NEXT_PUBLIC_API_PROTOCOL:-https}
-      NEXT_PUBLIC_APP_HOST: ${NEXT_PUBLIC_APP_HOST:-mainnet.amazechain.com}
+      NEXT_PUBLIC_APP_HOST: ${NEXT_PUBLIC_APP_HOST:-testnet.amazechain.com}
       NEXT_PUBLIC_APP_PROTOCOL: ${NEXT_PUBLIC_APP_PROTOCOL:-https}
       NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL: ${NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL:-wss}
       NEXT_PUBLIC_NETWORK_ID: ${NEXT_PUBLIC_NETWORK_ID:-94}
@@ -63,7 +63,7 @@ services:
     environment:
       BACK_PROXY_PASS: ${BACK_PROXY_PASS:-http://backend:4000}
       FRONT_PROXY_PASS: ${FRONT_PROXY_PASS:-http://frontend:3000}
-      PROXY_PASS_HOST: ${PROXY_PASS_HOST:-mainnet.amazechain.com}
+      PROXY_PASS_HOST: ${PROXY_PASS_HOST:-testnet.amazechain.com}
 
 volumes:
   db-data:

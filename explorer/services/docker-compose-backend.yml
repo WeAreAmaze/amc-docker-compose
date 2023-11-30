@@ -11,6 +11,3 @@ services:
       - 'host.docker.internal:host-gateway'
     env_file:
       - ../envs/common-blockscout.env
-    volumes:
-      - ./logs/:/app/logs/
-      - ./allocs/genesis-mainnet-geth.json:/app/genesis-geth.json
