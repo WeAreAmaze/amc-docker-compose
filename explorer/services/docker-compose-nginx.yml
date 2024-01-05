@@ -7,5 +7,3 @@ services:
       - 'host.docker.internal:host-gateway'
     volumes:
       - "../proxy:/etc/nginx/templates"
-    ports:
-      - 4010:80
