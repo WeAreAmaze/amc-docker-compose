@@ -28,6 +28,7 @@ services:
       ETHEREUM_JSONRPC_HTTP_URL: ${ETHEREUM_JSONRPC_HTTP_URL:-https://rpc.amazechain.com}
       ETHEREUM_JSONRPC_WS_URL: ${ETHEREUM_JSONRPC_WS_URL:-wss://ws.amazechain.com}
       ETHEREUM_JSONRPC_TRACE_URL: ${ETHEREUM_JSONRPC_TRACE_URL:-https://rpc.amazechain.com}
+      INDEXER_AMC_BEIJING_BLOCK: ${INDEXER_AMC_BEIJING_BLOCK:-770000}
 
 
   smart-contract-verifier:
